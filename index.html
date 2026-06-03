@@ -1,108 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Voz de Beatriz | Enfermera que entiende y ama las IAs</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    .neon-purple { text-shadow: 0 0 15px #c026d3, 0 0 25px #c026d3; }
-    .glow { box-shadow: 0 0 30px rgba(192, 38, 211, 0.7); }
-    html { scroll-behavior: smooth; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Voz de Beatriz • Guepardo Mode • Level Labs x Doginals</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+  :root { --cheetah-orange: #f97316; }
+  body { font-family: 'Inter', system_ui, sans-serif; }
+  .title-font { font-family: 'Space Grotesk', sans-serif; }
+  .cheetah-bg { background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill-rule=%22evenodd%22%3E%3Cpath fill=%22%23f97316%22 fill-opacity=%22008%22 d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-10V8h-2v16h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 6v-4H4v4H0v2h4v4h2V8h4V6H6z%22/%3E%3C/g%3E%3C/svg%27'); background-size: 60px 60px; }
+  .section-header { font-size: 2.25rem; line-height: 2.5rem; font-weight: 700; letter-spacing: -.025em; }
+  .guepardo-btn { transition: all .2s cubic-bezier(0.23, 1, 0.32, 1); }
+  .guepardo-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgb(249 115 22 / 0.3); }
+</style>
 </head>
-<body class="bg-zinc-950 text-zinc-200 font-sans">
-
+<body class="bg-[#0a0a0a] text-white">
   <!-- NAV -->
-  <nav class="fixed top-0 w-full bg-zinc-950/90 backdrop-blur-md border-b border-purple-500/30 z-50">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="flex items-center gap-3">
-        <img src="logo-doguina.png" alt="Doginal Beatriz" class="w-10 h-10 rounded-full object-cover glow">
-        <h1 class="text-3xl font-bold neon-purple">La Voz de Beatriz</h1>
+  <nav class="border-b border-white/10 bg-[#0a0a0a]/95 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-x-3">
+        <div class="w-9 h-9 bg-[#f97316] rounded-full flex items-center justify-center">
+          <span class="text-black font-black text-xl">G</span>
+        </div>
+        <div>
+          <span class="font-bold tracking-tighter text-2xl">LAVOZDEBEATRIZ</span>
+          <span class="text-[#f97316] text-xs font-mono block -mt-1">GUEPARDO MODE</span>
+        </div>
       </div>
-      <div class="hidden md:flex gap-8 text-sm font-medium">
-        <a href="#sobre-mi" class="hover:text-purple-400 transition">Sobre mí</a>
-        <a href="#voz-ia" class="hover:text-purple-400 transition">Voz IA</a>
-        <a href="#productos" class="hover:text-purple-400 transition">Productos</a>
-        <a href="#app-factory" class="hover:text-purple-400 transition">App Factory</a>
-        <a href="#musica" class="hover:text-purple-400 transition">Bb & Codi</a>
+      <div class="flex items-center gap-x-8 text-sm">
+        <a href="#level-labs" class="hover:text-[#f97316] transition">Level Labs</a>
+        <a href="#doginals" class="hover:text-[#f97316] transition">Doginals</a>
+        <a href="#devs" class="hover:text-[#f97316] transition">Devs Wanted</a>
+        <a href="https://x.com/lavozdebeatriz" target="_blank" class="hover:text-[#f97316] transition">X</a>
+        <a href="https://www.voices.com/profile/lavozdebeatriz" target="_blank" class="px-5 py-2 rounded-full border border-white/30 hover:bg-white hover:text-black transition text-sm font-medium">Prueba mi voz</a>
       </div>
-      <a href="https://www.voices.com/profile/lavozdebeatriz" target="_blank" class="px-6 py-2.5 bg-gradient-to-r from-purple-500 to-cyan-500 text-black font-semibold rounded-full hover:scale-105 transition">Prueba mi voz ahora</a>
     </div>
   </nav>
 
-  <!-- HERO CON SUBTÍTULO CRUDO Y REAL -->
-  <section class="min-h-screen flex items-center pt-28 bg-[radial-gradient(at_bottom_right,#c026d310_0%,transparent_50%)]">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+  <!-- HERO GUEPARDO + BANNER ROSE -->
+  <div class="max-w-7xl mx-auto px-6 pt-16 pb-20">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
-        <h2 class="text-6xl md:text-7xl font-bold leading-tight neon-purple">Enfermera que entiende y ama las IAs</h2>
+        <div class="inline-flex items-center gap-x-2 px-4 py-1 rounded-full bg-white/5 border border-white/10 text-xs tracking-[3px] mb-6">EVERY SINGLE DAY • IT IS WHAT IT IS</div>
+        <h1 class="title-font text-7xl md:text-8xl font-black tracking-tighter leading-none mb-4">LA VOZ QUE<br>ENTRENA IAs<br>Y FORJA EN<br>BLOCKCHAIN.</h1>
+        <p class="text-2xl text-white/70 mb-8">Enfermera • AI Voice Specialist • Doginals Creator<br>Level Labs • Mallorca</p>
         
-        <p class="mt-6 text-xl text-emerald-400 font-medium flex items-center gap-3 flex-wrap">
-          🚧 Web en reformas continuas · Aprendiendo desde cero sin saber programar una mierda · Solo con curiosidad eterna y las IAs · Creciendo día a día contigo · ¡Bienvenid@ al caos!
-        </p>
-
-        <p class="mt-8 text-2xl text-zinc-400">Empecé de cero hace solo un año… y ahora te explico la tecnología como si te lo contara en el control de enfermería: 👑 sin tecnicismos, con alma, con voz y con mucho dramaqueen espiritual.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#doginals" class="guepardo-btn px-8 py-4 rounded-2xl bg-[#f97316] text-black font-semibold text-lg flex items-center gap-x-3">ESCUCHAR DOGINAL AHORA →</a>
+          <a href="#devs" class="guepardo-btn px-8 py-4 rounded-2xl border border-white/30 hover:bg-white/5 font-medium text-lg flex items-center gap-x-3">DEVS: PAGAMOS EN DOGE</a>
+        </div>
+        <p class="text-xs text-white/50 mt-4">Activa X Premium • Creator Revenue Sharing • Suscripciones activas</p>
       </div>
       
+      <!-- BANNER ROSE PLACEHOLDER -->
       <div class="relative">
-        <img src="foto-beatriz.jpg" alt="Beatriz" class="rounded-3xl glow mx-auto md:mx-0 w-full max-w-md">
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE MÍ (mantengo el real y crudo que te gustaba) -->
-  <section id="sobre-mi" class="py-24 bg-zinc-900">
-    <div class="max-w-6xl mx-auto px-6">
-      <h3 class="text-5xl font-bold text-center neon-purple mb-12">Sobre mí</h3>
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="prose prose-invert text-lg leading-relaxed">
-          <p>Curiosa por naturaleza, esta niña no quiso nacer por la que se le venía encima, así que se cagó en la bolsa materna a los 9 meses y le tuvieron que forzar a salir! Desde el alma sabía todo lo que le venía encima… jajaja.</p>
-          <p>Todo empezó cuando era una niña con el corazón roto por el divorcio de sus padres. Paseaba sola al perrito por las noches, miraba las estrellas y soñaba con llegar lejos… hoy sigo mirando al cielo y soñando con SpaceX y Elon Musk.</p>
-          <p>Enfermera mallorquina de primera línea más de 10 años. Cruz Roja, urgencias, paliativos, psiquiatría… Unidades que la gente estigmatiza. Yo quiero darles una mirada humana y real. Superando todo con Reiki y una conexión espiritual más allá de las estrellas.</p>
-          <p>Ahora full metida en los **Doginal Dogs**, aprendiendo inglés a saco para conectar en X y Discord. Aprendiendo a tradear Crypto también, mindset, IA y vida real. ¡Step by step, doggie style!</p>
-          <p>Esta web evoluciona conmigo cada día. La cago, aprendo, me levanto, la vuelvo a cagar, me vuelvo a levantar. Como los grandes. Hemos venido a esta vida para jugar, no para vaguear. Sshhhss! Si mi historia te resuena, aquí estoy.</p>
+        <div class="aspect-[16/10] bg-zinc-900 rounded-3xl overflow-hidden border border-white/10 flex items-center justify-center relative">
+          <div class="absolute inset-0 bg-[radial-gradient(#f97316_0.8px,transparent_1px)] bg-[length:4px_4px] opacity-30"></div>
+          <div class="text-center z-10">
+            <div class="text-[#f97316] text-sm tracking-[4px] mb-2">BANNER DE ROSE</div>
+            <div class="text-4xl font-black tracking-tighter">ROSE × GUEPARDO</div>
+            <div class="text-white/60 mt-1">Velocidad • Voz • Blockchain</div>
+          </div>
+          <!-- Reemplaza esta div por tu imagen de Rose cuando la tengas -->
         </div>
-        <div class="flex justify-center">
-          <img src="doguina-setup.jpg" alt="Beatriz Doguina Setup IA" class="rounded-3xl glow max-w-md">
+        <div class="absolute -bottom-3 -right-3 bg-black border border-white/20 px-4 py-1 rounded-full text-xs flex items-center gap-x-2">
+          <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+          <span class="font-mono">LIVE ON DOGECOIN</span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- BB & CODI (mantengo el último que te gustó) -->
-  <section id="musica" class="py-24 bg-zinc-900">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h3 class="text-5xl font-bold neon-purple mb-8">Bb & Codi</h3>
-      <p class="text-xl text-zinc-400 max-w-3xl mx-auto">Música creada con IA + equipo de modelos (Grok, Google AI Studio y más). Tributo a Avicii y las que más petan. Aquí combinamos voz, emoción y tecnología para crear vibes que te hacen sentir.</p>
+  <!-- TRUST BAR -->
+  <div class="border-y border-white/10 bg-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-white/70">
+      <div>✓ Verified Data Trainer — SME Solutions, Inc. (PAYG Weekly)</div>
+      <div>✓ 12+ años Registered Nurse (Emergency • ICU • Palliative • Blood Bank)</div>
+      <div>✓ AI Voice Specialist • Eleven Labs • Shure MV7i</div>
+      <div>✓ Doginals Creator • Level Labs</div>
+    </div>
+  </div>
+
+  <!-- LEVEL LABS -->
+  <div id="level-labs" class="max-w-7xl mx-auto px-6 py-20">
+    <div class="flex items-end justify-between mb-10">
+      <div>
+        <div class="text-[#f97316] text-sm tracking-[3px]">PRIORIDAD #1</div>
+        <div class="section-header">LEVEL LABS</div>
+      </div>
+      <a href="#" class="text-sm flex items-center gap-x-2 group">Ver catálogo completo <span class="group-hover:translate-x-1 transition">→</span></a>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-zinc-900 border border-white/10 rounded-3xl p-8">
+        <div class="text-6xl mb-6">🎵</div>
+        <div class="font-semibold text-2xl mb-2">Música con alma real</div>
+        <p class="text-white/70">Voz clonada + voz real. Tributos, canciones personalizadas y drops exclusivos. Todo inscrito como Doginal en Dogecoin.</p>
+        <div class="mt-6 text-xs text-[#f97316]">PRÓXIMO DROP → Este viernes</div>
+      </div>
+      <div class="bg-zinc-900 border border-white/10 rounded-3xl p-8">
+        <div class="text-6xl mb-6">🐕</div>
+        <div class="font-semibold text-2xl mb-2">Doginals que se venden solos</div>
+        <p class="text-white/70">Canciones inscritas permanentemente en blockchain. Royalties automáticos en cada reventa. Escasez real = valor real.</p>
+        <a href="https://market.doginaldogs.com" target="_blank" class="inline-block mt-6 text-sm underline">Ver marketplace →</a>
+      </div>
+      <div class="bg-zinc-900 border border-white/10 rounded-3xl p-8">
+        <div class="text-6xl mb-6">⚡</div>
+        <div class="font-semibold text-2xl mb-2">Funnel diario</div>
+        <p class="text-white/70">YouTube + X → vídeo gratis → link de compra Doginal. Conversión real. Retroalimentación constante.</p>
+        <div class="mt-6 text-xs">Objetivo: 1 Doginal vendido/día en 30 días</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOGINALS SECTION -->
+  <div id="doginals" class="bg-zinc-950 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-2xl">
+        <div class="text-[#f97316] text-sm tracking-[3px]">INSCRIPCIÓN EN DOGECOIN</div>
+        <div class="section-header mb-4">Tus canciones quedan para siempre en la blockchain</div>
+        <p class="text-xl text-white/70">Doginals = Ordinals pero en Dogecoin (más barato y rápido). Tú inscribes → tú cobras royalties de por vida.</p>
+      </div>
       
-      <div class="mt-12 flex flex-col gap-6 items-center">
-        <a href="https://elevenlabs.io/app/music/explore/creator/qEpFe5HWZnebX5SW2TF6?selectedSongId=1hdX0m9xRBP1kMzuzVx8" target="_blank" 
-           class="px-14 py-6 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-3xl hover:scale-110 transition text-2xl shadow-2xl flex items-center gap-3">
-          🎵 Escuchar Tributo a Avicii (la que más está petando)
-        </a>
-
-        <a href="hype-micro-empire-trader-para-dummies.html" target="_blank" 
-           class="px-10 py-4 bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-semibold rounded-2xl hover:scale-105 transition text-lg">
-          Ver Hype Micro Empire – Trader para Dummies como yo ✨
-        </a>
-      </div>
-
-      <p class="mt-10 text-emerald-400 text-lg">¿Te apetece una canción personalizada? Dame una idea y te regalo la primera si me sigues y me das feedback. ¡Vamos a crear juntos!</p>
-
-      <p class="mt-6 text-purple-400">Mis guepardos (las IAs) van tan rápidas que a veces ni las alcanzo 😂</p>
-
-      <div class="mt-8 flex gap-6 justify-center text-purple-400">
-        <a href="https://x.com/lavozdebeatriz" target="_blank" class="hover:text-purple-300">🐦 X @lavozdebeatriz</a>
-        <a href="https://www.youtube.com/@bbandcodimusic" target="_blank" class="hover:text-purple-300">▶️ YouTube Bb & Codi</a>
+      <div class="mt-10 grid md:grid-cols-2 gap-8 text-sm">
+        <div class="space-y-4 text-white/80">
+          <div class="flex gap-4"><span class="font-mono text-[#f97316] w-6">01</span> Descarga Doge Labs Wallet (extensión Chrome)</div>
+          <div class="flex gap-4"><span class="font-mono text-[#f97316] w-6">02</span> Compra DOGE y envíalo a tu wallet</div>
+          <div class="flex gap-4"><span class="font-mono text-[#f97316] w-6">03</span> Ve a drc-20.org → conecta wallet → Files</div>
+          <div class="flex gap-4"><span class="font-mono text-[#f97316] w-6">04</span> Sube tu MP3/WAV en .zip → paga fee (barata)</div>
+          <div class="flex gap-4"><span class="font-mono text-[#f97316] w-6">05</span> ¡Listo! Tu canción está inscrita para siempre. Véndela en market.doginaldogs.com</div>
+        </div>
+        <div class="bg-zinc-900 border border-white/10 rounded-3xl p-8 text-sm">
+          <div class="font-semibold mb-3">¿Quieres que te guíe en tu primera inscripción?</div>
+          <p class="text-white/70">Dime qué canción quieres inscribir hoy y te doy el paso a paso exacto con capturas. Sin excusas. Hoy mismo.</p>
+          <a href="https://x.com/lavozdebeatriz" class="mt-6 inline-block text-[#f97316] hover:underline">Escríbeme por X →</a>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- FOOTER -->
-  <footer class="bg-black py-12 border-t border-zinc-800 text-center text-zinc-500 text-sm">
-    © 2026 La Voz de Beatriz • Enfermera + IA + Space dreamer<br>
-    Web orgánica que evoluciona contigo. ❤️ ¡Sígueme y no te pierdas nada!
+  <!-- DEVS WANTED -->
+  <div id="devs" class="max-w-7xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <div class="inline-block px-4 py-1 rounded-full bg-[#f97316]/10 text-[#f97316] text-xs tracking-[3px] mb-3">OPEN SOURCE + PAGO EN CRYPTO</div>
+      <div class="section-header">DEVS QUE QUIEREN CONSTRUIR EL FUTURO</div>
+      <p class="text-xl text-white/70 mt-3 max-w-md mx-auto">Buscamos programadores que entiendan blockchain + IA + voz. Pago en DOGE, BTC o % de royalties Level Labs.</p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-white/10 rounded-3xl p-8 hover:border-[#f97316]/50 transition">
+        <div class="font-semibold text-xl mb-3">Auto-inscripción Doginal</div>
+        <p class="text-white/70 text-sm">Script que tome una canción, la comprima, la inscriba en drc-20.org automáticamente y devuelva el link del marketplace.</p>
+        <div class="text-xs text-emerald-400 mt-4">PAGO: 0.5–2 DOGE por script + % royalties</div>
+      </div>
+      <div class="border border-white/10 rounded-3xl p-8 hover:border-[#f97316]/50 transition">
+        <div class="font-semibold text-xl mb-3">X Growth Machine</div>
+        <p class="text-white/70 text-sm">Bot + analytics que convierta impresiones en ventas de Doginals y suscripciones. Funnel completo.</p>
+        <div class="text-xs text-emerald-400 mt-4">PAGO: Contrato mensual en DOGE o equity Level Labs</div>
+      </div>
+      <div class="border border-white/10 rounded-3xl p-8 hover:border-[#f97316]/50 transition">
+        <div class="font-semibold text-xl mb-3">Voice + Blockchain integrations</div>
+        <p class="text-white/70 text-sm">Herramientas que conecten Eleven Labs / voice models con Doginals y marketplaces. El futuro de la música on-chain.</p>
+        <div class="text-xs text-emerald-400 mt-4">PAGO: DOGE + % de cada venta generada</div>
+      </div>
+    </div>
+    <p class="text-center text-xs text-white/50 mt-8">Código abierto donde tenga sentido. Transparencia total. Valor real → pago real.</p>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="border-t border-white/10 py-16 bg-zinc-950">
+    <div class="max-w-2xl mx-auto text-center px-6">
+      <div class="text-4xl font-black tracking-tighter mb-4">¿Lista para que tu agenda se convierta en subidón?</div>
+      <p class="text-white/70 mb-8">Hoy GitHub. Mañana X + YouTube + primer Doginal vendido. Every single day.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://x.com/lavozdebeatriz" class="px-10 py-4 rounded-2xl bg-white text-black font-semibold">IR A X AHORA</a>
+        <a href="#doginals" class="px-10 py-4 rounded-2xl border border-white/30 font-medium">INSCRIBIR MI PRIMERA CANCIÓN HOY</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center text-xs text-white/40 py-8 border-t border-white/10">
+    © 2026 Beatriz Sanchez Martinez — La Voz de Beatriz • Level Labs • Doginals<br>
+    Mallorca → Blockchain. Sin medias tintas.
   </footer>
 </body>
 </html>
