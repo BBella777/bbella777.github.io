@@ -1,36 +1,443 @@
-# 🐆 La Gueparda Enfermera | Renace Salvaje
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BB • Healing Music</title>
+    <meta name="description" content="Organic songs made for you. Your story inside the music. Personalized healing music by BB.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+        
+        .title-font {
+            font-family: 'Playfair Display', 'Times New Roman', serif;
+            letter-spacing: -0.02em;
+        }
+        
+        .cosmic-bg {
+            background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+        }
+        
+        .cosmic-dots {
+            background-image: 
+                radial-gradient(#9B7EBD 0.8px, transparent 1px),
+                radial-gradient(#9B7EBD 0.5px, transparent 1px);
+            background-size: 5px 5px, 3px 3px;
+            opacity: 0.12;
+        }
 
-**Veloz. Feroz. Renacida desde mi santuario seguro.**
+        .section-title {
+            color: #ffffff;
+        }
 
-Enfermera guerrera que sobrevivió la sabana hospitalaria, abusos de poder y casi romperse. Elegí mi casa como base segura. Desde aquí creo Level Labs (música de renacimiento), inscribo Doginals (activos eternos en Dogecoin) y genero contenido que influye en salud mental real y autocuidado primero.
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #9B7EBD;
+        }
 
-## Lo que construyo
-- **Level Labs** → Música que nace de la herida transformada (voz real + clonada)
-- **Doginals** → Canciones inscritas para siempre (se venden, generan royalties automáticos)
-- **Contenido desde casa** → X + YouTube + LinkedIn con voz de gueparda superviviente
-- **Código abierto** → Herramientas para devs que quieran escalar este ecosistema
+        .music-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .music-card:hover {
+            transform: translateY(-4px);
+            border-color: #9B7EBD;
+        }
 
-## Si eres developer / dev
-Busco colaboradores para:
-- Agentes de contenido automático (posts programados para X, YouTube, LinkedIn)
-- Integración de voz clonada para generar vídeos masivos
-- Scripts de minting de Doginals y gestión de royalties
-- Herramientas de análisis musical (Kravagas / Udemy Studio)
+        .elegant-border {
+            border-color: rgba(255,255,255,0.08);
+        }
 
-**Pago en DOGE, BTC o contratos claros.**  
-Si ves valor en código que genera libertad financiera real… hablemos.
-
-## Enlaces
-- X → [tu @]
-- YouTube → [tu canal]
-- Doginals → market.doginaldogs.com
-- Nivel Labs (próximamente)
-
-*La sabana cambia. La gueparda se adapta y sigue corriendo.*
-**GUEPARDA RENACE**
-     
-
- 
-       
-     
+        .horus {
+            filter: drop-shadow(0 0 8px rgba(155, 126, 189, 0.3));
+        }
+    </style>
+</head>
+<body class="bg-[#020617] text-white font-sans">
     
+    <!-- NAV -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#020617]/90 backdrop-blur-lg">
+        <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-[#9B7EBD] flex items-center justify-center">
+                    <span class="font-bold text-[#020617] text-sm">BB</span>
+                </div>
+                <span class="font-semibold tracking-wider">BB • Healing Music</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm">
+                <a href="#healing-music" class="nav-link text-gray-300">Healing Music</a>
+                <a href="#doginal" class="nav-link text-gray-300">Doginal Dogs</a>
+                <a href="#videos" class="nav-link text-gray-300">Videos</a>
+                <a href="#care" class="nav-link text-gray-300">Care Plans</a>
+            </div>
+            <button onclick="showSampleModal()" 
+                    class="hidden md:block text-sm px-5 py-2 rounded-full border border-[#9B7EBD] hover:bg-[#9B7EBD] hover:text-[#020617] transition-all">
+                Get free sample
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="cosmic-bg min-h-screen flex items-center relative overflow-hidden pt-16">
+        <!-- Cosmic background layers -->
+        <div class="absolute inset-0 cosmic-dots"></div>
+        
+        <!-- Subtle Saturn -->
+        <div class="absolute top-12 right-8 md:right-16 w-48 h-48 md:w-64 md:h-64 opacity-20 pointer-events-none">
+            <svg viewBox="0 0 200 200" class="w-full h-full">
+                <ellipse cx="100" cy="100" rx="38" ry="38" fill="#1E3A5F"/>
+                <ellipse cx="100" cy="100" rx="42" ry="42" fill="#9B7EBD" fill-opacity="0.15"/>
+                <ellipse cx="100" cy="100" rx="72" ry="18" fill="none" stroke="#9B7EBD" stroke-width="3" stroke-opacity="0.6"/>
+                <ellipse cx="100" cy="100" rx="60" ry="14" fill="none" stroke="#1E3A5F" stroke-width="6" stroke-opacity="0.5"/>
+                <ellipse cx="100" cy="100" rx="82" ry="21" fill="none" stroke="#9B7EBD" stroke-width="1.5" stroke-opacity="0.3"/>
+            </svg>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+            <!-- Eye of Horus -->
+            <div class="flex justify-center mb-8">
+                <div class="horus">
+                    <svg width="68" height="68" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 32C8 32 18 20 32 20C46 20 56 32 56 32C56 32 46 44 32 44C18 44 8 32 8 32Z" stroke="#9B7EBD" stroke-width="2.5"/>
+                        <path d="M32 26C35.3137 26 38 28.6863 38 32C38 35.3137 35.3137 38 32 38C28.6863 38 26 35.3137 26 32C26 28.6863 28.6863 26 32 26Z" fill="#9B7EBD"/>
+                        <path d="M56 32L62 38" stroke="#9B7EBD" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M56 32L62 26" stroke="#9B7EBD" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M8 32L2 38" stroke="#9B7EBD" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M8 32L2 26" stroke="#9B7EBD" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M20 24L44 24" stroke="#9B7EBD" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <h1 class="text-7xl md:text-[92px] font-bold tracking-tighter title-font mb-1 text-white">BB</h1>
+            <p class="text-4xl md:text-[42px] text-[#9B7EBD] font-light tracking-tight mb-8">Healing Music</p>
+            
+            <p class="max-w-xl mx-auto text-xl md:text-2xl text-gray-300 mb-10 leading-tight">
+                Organic songs made for you.<br>
+                Your story inside the music.
+            </p>
+            
+            <button onclick="showSampleModal()"
+                    class="bg-[#9B7EBD] hover:bg-[#8B6DB0] transition-all px-10 py-4 rounded-2xl text-xl font-semibold inline-flex items-center gap-3 mx-auto shadow-lg shadow-[#9B7EBD]/20">
+                <i class="fas fa-play"></i>
+                <span>Get your 1-minute free sample</span>
+            </button>
+            
+            <p class="mt-8 text-sm text-gray-400 tracking-wide">Be Beauty. Be Roar. Be Cheetah like my AI Team.</p>
+        </div>
+
+        <!-- Golden Retriever with lilac beret -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 md:left-12 md:translate-x-0 z-20">
+            <div class="w-28 h-28 md:w-40 md:h-40 rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl">
+                <img src="assets/dog-beret.png" 
+                     alt="Golden retriever wearing elegant lilac beret - BB's mascot" 
+                     class="w-full h-full object-cover"
+                     style="filter: contrast(1.05) saturate(0.95);"
+                     onerror="this.src='https://picsum.photos/id/1005/400/400'; this.style.filter='';">
+            </div>
+            <p class="text-[10px] text-center mt-1.5 text-gray-500 tracking-widest">THE MASCOT</p>
+        </div>
+    </header>
+
+    <!-- HEALING MUSIC -->
+    <section id="healing-music" class="max-w-6xl mx-auto px-6 py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-5xl md:text-6xl title-font section-title mb-4">Healing Music</h2>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                Personalized songs with the sacred 555 rhythm.<br>
+                From deep meditation to powerful rock.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <!-- Sample cards -->
+            <div class="music-card bg-white/5 border elegant-border rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-5">
+                    <div>
+                        <p class="font-semibold text-lg">Avicii Tribute</p>
+                        <p class="text-sm text-gray-400">Energetic &amp; uplifting</p>
+                    </div>
+                    <button onclick="togglePlay(this)" class="text-[#9B7EBD] hover:text-white w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-play text-2xl"></i>
+                    </button>
+                </div>
+                <div class="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    <div class="h-1.5 w-[78%] bg-[#9B7EBD] rounded-full"></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">Weekly Top Sample</p>
+            </div>
+
+            <div class="music-card bg-white/5 border elegant-border rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-5">
+                    <div>
+                        <p class="font-semibold text-lg">Amy Winehouse Soul</p>
+                        <p class="text-sm text-gray-400">Emotional &amp; raw</p>
+                    </div>
+                    <button onclick="togglePlay(this)" class="text-[#9B7EBD] hover:text-white w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-play text-2xl"></i>
+                    </button>
+                </div>
+                <div class="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    <div class="h-1.5 w-[52%] bg-[#9B7EBD] rounded-full"></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">Weekly Top Sample</p>
+            </div>
+
+            <div class="music-card bg-white/5 border elegant-border rounded-3xl p-6">
+                <div class="flex justify-between items-start mb-5">
+                    <div>
+                        <p class="font-semibold text-lg">Deep Meditation 555</p>
+                        <p class="text-sm text-gray-400">Sacred rhythm healing</p>
+                    </div>
+                    <button onclick="togglePlay(this)" class="text-[#9B7EBD] hover:text-white w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-play text-2xl"></i>
+                    </button>
+                </div>
+                <div class="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    <div class="h-1.5 w-[91%] bg-[#9B7EBD] rounded-full"></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">Most requested</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-12">
+            <button onclick="showSampleModal()" 
+                    class="bg-white text-[#020617] hover:bg-gray-200 transition-all px-9 py-3.5 rounded-2xl font-semibold text-lg inline-flex items-center gap-2">
+                <span>Create your personalized song</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- DOGINAL DOGS COMMUNITY -->
+    <section id="doginal" class="max-w-6xl mx-auto px-6 py-16 border-t border-white/10">
+        <div class="text-center mb-10">
+            <h2 class="text-4xl md:text-5xl title-font mb-3">Part of the Doginal Dogs Pack</h2>
+            <p class="text-gray-400">Starter Dog • BB</p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white/5 border elegant-border rounded-3xl overflow-hidden">
+                <div class="aspect-[16/9] bg-gradient-to-br from-[#1E3A5F] to-black flex items-center justify-center relative">
+                    <img src="assets/cheetah-banner.png" 
+                         alt="Powerful cheetah Doginal Dogs banner by Rose" 
+                         class="w-full h-full object-cover opacity-90"
+                         onerror="this.src='https://picsum.photos/id/1015/1200/630';">
+                    <div class="absolute bottom-4 right-4 bg-black/60 px-4 py-1 rounded-full text-xs tracking-widest">
+                        ART BY ROSE
+                    </div>
+                </div>
+                <div class="p-8 text-center">
+                    <p class="mb-6 text-lg">This powerful cheetah banner was created by <span class="text-[#9B7EBD]">Rose</span>, fellow Doginal Dogs artist.</p>
+                    <a href="https://rosegoldbanners.com" target="_blank"
+                       class="inline-block bg-[#9B7EBD] text-white px-8 py-3 rounded-2xl font-semibold hover:bg-[#8B6DB0] transition-all">
+                        Get your banner by Rose
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOM VIDEOS -->
+    <section id="videos" class="max-w-6xl mx-auto px-6 py-16 border-t border-white/10">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl md:text-5xl title-font mb-5">Custom Videos</h2>
+                <p class="text-lg text-gray-300 mb-6 max-w-md">
+                    Want a video for your brand or company with this same quality or better?
+                </p>
+                <button onclick="showVideoForm()" 
+                        class="bg-white text-[#020617] px-8 py-3 rounded-2xl font-semibold hover:bg-gray-200 transition-all">
+                    Request a custom video
+                </button>
+            </div>
+            <div class="bg-white/5 border elegant-border rounded-3xl p-8 flex items-center justify-center min-h-[220px]">
+                <div class="text-center">
+                    <i class="fas fa-video text-4xl text-[#9B7EBD] mb-4"></i>
+                    <p class="text-gray-400">High-quality custom video previews available upon request</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSONALIZED CARE PLANS -->
+    <section id="care" class="max-w-4xl mx-auto px-6 py-20 border-t border-white/10">
+        <div class="text-center">
+            <h2 class="text-4xl md:text-5xl title-font mb-4">Personalized Care Plans</h2>
+            <p class="max-w-lg mx-auto text-gray-300 mb-10">
+                A deep but simple nurse assessment to discover which areas of your life need more attention right now.
+            </p>
+            
+            <div class="max-w-sm mx-auto bg-white/5 border elegant-border rounded-3xl p-8">
+                <div class="text-5xl font-bold mb-1">$11</div>
+                <div class="text-sm text-gray-400 mb-6">One-time payment • Lifetime access to your plan</div>
+                
+                <button onclick="showCareForm()"
+                        class="w-full bg-[#9B7EBD] hover:bg-[#8B6DB0] py-4 rounded-2xl text-lg font-semibold transition-all">
+                    Discover what you need to care for
+                </button>
+                
+                <p class="text-xs text-gray-500 mt-4">Paid via Phantom Wallet (Solana)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 py-10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-y-4 text-sm">
+            <div>
+                <span class="font-semibold">BB</span> • Healing Music
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="https://x.com/BBvoice777" target="_blank" class="hover:text-[#9B7EBD]">X</a>
+                <a href="#" class="hover:text-[#9B7EBD]">Instagram</a>
+                <a href="https://elevenlabs.io" target="_blank" class="hover:text-[#9B7EBD]">ElevenLabs</a>
+            </div>
+            
+            <div class="text-xs text-gray-500 tracking-wide text-center md:text-right">
+                Be Beauty. Be Roar. Be Cheetah like my AI Team.
+            </div>
+        </div>
+    </footer>
+
+    <!-- FREE SAMPLE MODAL -->
+    <div id="sampleModal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
+        <div class="bg-[#0f172a] border border-white/10 p-8 rounded-3xl max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold">Get your 1-minute free sample</h3>
+                <button onclick="hideSampleModal()" class="text-gray-400 hover:text-white">✕</button>
+            </div>
+            
+            <p class="text-gray-400 mb-4">Tell me a little about you or the feeling you want in the music.</p>
+            
+            <textarea id="sampleText" class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-4 focus:outline-none focus:border-[#9B7EBD]" rows="4" 
+                      placeholder="Example: I want something powerful and emotional, like starting over after a big life change..."></textarea>
+            
+            <div class="flex gap-3">
+                <button onclick="hideSampleModal()" 
+                        class="flex-1 py-3 rounded-2xl border border-white/30 hover:bg-white/5">Cancel</button>
+                <button onclick="submitSampleRequest()" 
+                        class="flex-1 bg-[#9B7EBD] py-3 rounded-2xl font-semibold">Send my request</button>
+            </div>
+            <p class="text-[10px] text-center text-gray-500 mt-3">I'll create and send it to you personally.</p>
+        </div>
+    </div>
+
+    <!-- CARE PLAN MODAL -->
+    <div id="careModal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
+        <div class="bg-[#0f172a] border border-white/10 p-8 rounded-3xl max-w-md w-full mx-4">
+            <h3 class="text-2xl font-semibold mb-2">Personalized Care Plan</h3>
+            <p class="text-gray-400 mb-6">One-time $11 payment via Solana.</p>
+            
+            <div class="bg-white/5 rounded-2xl p-5 mb-6 text-sm">
+                <p class="font-medium mb-2">How it works:</p>
+                <ol class="list-decimal pl-5 space-y-1 text-gray-300">
+                    <li>Pay $11 SOL to the wallet below</li>
+                    <li>Fill out the short assessment form</li>
+                    <li>Receive your personalized care plan within 48h</li>
+                </ol>
+            </div>
+
+            <div class="mb-6">
+                <p class="text-xs text-gray-400 mb-1">Send $11 SOL to:</p>
+                <div class="font-mono text-sm bg-black/40 p-3 rounded-xl break-all">BBHEALING...YOURWALLETADDRESSHERE</div>
+                <p class="text-[10px] text-gray-500 mt-1">Replace with your real Phantom address</p>
+            </div>
+
+            <button onclick="submitCareRequest()" 
+                    class="w-full bg-[#9B7EBD] py-3.5 rounded-2xl font-semibold mb-3">
+                I've sent the payment — Continue
+            </button>
+            
+            <button onclick="hideCareModal()" 
+                    class="w-full py-3 text-sm text-gray-400 hover:text-white">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        let currentlyPlaying = null;
+        
+        function togglePlay(button) {
+            const icon = button.querySelector('i');
+            
+            if (currentlyPlaying && currentlyPlaying !== button) {
+                const prevIcon = currentlyPlaying.querySelector('i');
+                prevIcon.classList.remove('fa-pause');
+                prevIcon.classList.add('fa-play');
+                currentlyPlaying = null;
+            }
+            
+            if (icon.classList.contains('fa-play')) {
+                icon.classList.remove('fa-play');
+                icon.classList.add('fa-pause');
+                currentlyPlaying = button;
+                
+                setTimeout(() => {
+                    if (currentlyPlaying === button) {
+                        icon.classList.remove('fa-pause');
+                        icon.classList.add('fa-play');
+                        currentlyPlaying = null;
+                    }
+                }, 8000);
+            } else {
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+                currentlyPlaying = null;
+            }
+        }
+
+        function showSampleModal() {
+            const modal = document.getElementById('sampleModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+        
+        function hideSampleModal() {
+            const modal = document.getElementById('sampleModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        
+        function submitSampleRequest() {
+            hideSampleModal();
+            alert("Thank you! Your request has been received.\n\nBB will create and send your 1-minute sample personally.");
+        }
+
+        function showVideoForm() {
+            alert("Custom video request form would open here.\n\nYou can connect this button to a Google Form or Typeform later.");
+        }
+
+        function showCareForm() {
+            const modal = document.getElementById('careModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+        
+        function hideCareModal() {
+            const modal = document.getElementById('careModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        
+        function submitCareRequest() {
+            hideCareModal();
+            alert("Perfect! Once you send the $11 SOL, reply to this message or fill the short assessment.\n\nYour personalized care plan will be delivered within 48 hours.");
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+                document.querySelectorAll('.fixed').forEach(modal => {
+                    modal.classList.remove('flex');
+                    modal.classList.add('hidden');
+                });
+            }
+        });
+
+        window.onload = function() {
+            console.log('%c[BB Healing Music] Site ready', 'color:#9B7EBD');
+        }
+    </script>
+</body>
+</html>
