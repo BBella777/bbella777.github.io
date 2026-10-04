@@ -159,7 +159,7 @@
                         <p class="font-semibold text-lg">Avicii Tribute</p>
                         <p class="text-sm text-gray-400">Energetic & uplifting</p>
                     </div>
-                    <button onclick="togglePlay(this)" class="text-[#9B7EBD] hover:text-white w-10 h-10 flex items-center justify-center">
+                    <button type="button" onclick="togglePlay(this)" data-src="audio/avicii.mp3" class="text-[#9B7EBD] hover:text-white w-10 h-10 flex items-center justify-center">
                         <i class="fas fa-play text-2xl"></i>
                     </button>
                 </div>
@@ -175,7 +175,7 @@
                         <p class="font-semibold text-lg">Amy Winehouse Soul</p>
                         <p class="text-sm text-gray-400">Emotional & raw</p>
                     </div>
-                    <button onclick="togglePlay(this)" class="text-[#9B7EBD] hover:text-white w-10 h-10 flex items-center justify-center">
+                    <button type="button" onclick="togglePlay(this)" data-src="audio/amy.mp3" class="text-[#9B7EBD] hover:text-white w-10 h-10 flex items-center justify-center">
                         <i class="fas fa-play text-2xl"></i>
                     </button>
                 </div>
@@ -188,10 +188,10 @@
             <div class="music-card bg-white/5 border elegant-border rounded-3xl p-6">
                 <div class="flex justify-between items-start mb-5">
                     <div>
-                        <p class="font-semibold text-lg">Deep Meditation 555</p>
-                        <p class="text-sm text-gray-400">Sacred rhythm healing</p>
+                        <p class="font-semibold text-lg">Sacred Awakening</p>
+                        <p class="text-sm text-gray-400">Cinematic</p>
                     </div>
-                    <button onclick="togglePlay(this)" class="text-[#9B7EBD] hover:text-white w-10 h-10 flex items-center justify-center">
+                    <button type="button" onclick="togglePlay(this)" data-src="audio/sacred-awakening.mp3" class="text-[#9B7EBD] hover:text-white w-10 h-10 flex items-center justify-center">
                         <i class="fas fa-play text-2xl"></i>
                     </button>
                 </div>
@@ -356,37 +356,46 @@
         </div>
     </div>
 
+    <audio id="samplePlayer" preload="none"></audio>
     <script>
         let currentlyPlaying = null;
-        
+        const samplePlayer = document.getElementById('samplePlayer');
+
         function togglePlay(button) {
             const icon = button.querySelector('i');
-            
+            const src = button.getAttribute('data-src');
+
             if (currentlyPlaying && currentlyPlaying !== button) {
                 const prevIcon = currentlyPlaying.querySelector('i');
                 prevIcon.classList.remove('fa-pause');
                 prevIcon.classList.add('fa-play');
-                currentlyPlaying = null;
             }
-            
-            if (icon.classList.contains('fa-play')) {
-                icon.classList.remove('fa-play');
-                icon.classList.add('fa-pause');
-                currentlyPlaying = button;
-                
-                setTimeout(() => {
-                    if (currentlyPlaying === button) {
-                        icon.classList.remove('fa-pause');
-                        icon.classList.add('fa-play');
-                        currentlyPlaying = null;
-                    }
-                }, 8000);
-            } else {
+
+            if (currentlyPlaying === button && !samplePlayer.paused) {
+                samplePlayer.pause();
                 icon.classList.remove('fa-pause');
                 icon.classList.add('fa-play');
                 currentlyPlaying = null;
+                return;
             }
+
+            if (samplePlayer.dataset.track !== src) {
+                samplePlayer.src = src;
+                samplePlayer.dataset.track = src;
+            }
+            samplePlayer.play();
+            icon.classList.remove('fa-play');
+            icon.classList.add('fa-pause');
+            currentlyPlaying = button;
         }
+
+        samplePlayer.addEventListener('ended', function () {
+            if (!currentlyPlaying) return;
+            const icon = currentlyPlaying.querySelector('i');
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-play');
+            currentlyPlaying = null;
+        });
 
         function showSampleModal() {
             const modal = document.getElementById('sampleModal');
