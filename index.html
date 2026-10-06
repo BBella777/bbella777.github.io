@@ -303,31 +303,77 @@
     </footer>
 
     <!-- FREE SAMPLE MODAL -->
-    <div id="sampleModal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
-        <div class="bg-[#0f172a] border border-white/10 p-8 rounded-3xl max-w-md w-full mx-4">
+    <div id="sampleModal" data-modal class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
+        <div class="bg-[#0f172a] border border-white/10 p-8 rounded-3xl max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-2xl font-semibold">Get your 1-minute free sample</h3>
-                <button onclick="hideSampleModal()" class="text-gray-400 hover:text-white">✕</button>
+                <button type="button" onclick="hideSampleModal()" class="text-gray-400 hover:text-white">✕</button>
             </div>
-            
-            <p class="text-gray-400 mb-4">Tell me a little about you or the feeling you want in the music.</p>
-            
-            <textarea id="sampleText" class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-4 focus:outline-none focus:border-[#9B7EBD]" rows="4" 
-                      placeholder="Example: I want something powerful and emotional, like starting over after a big life change..."></textarea>
-            
-            <div class="flex gap-3">
-                <button onclick="hideSampleModal()" 
-                        class="flex-1 py-3 rounded-2xl border border-white/30 hover:bg-white/5">Cancel</button>
-                <button onclick="submitSampleRequest()" 
-                        class="flex-1 bg-[#9B7EBD] py-3 rounded-2xl font-semibold">Send my request</button>
+
+            <form id="sampleForm" novalidate onsubmit="submitSampleRequest(event)">
+                <p class="text-gray-400 mb-4">Tell me a little about you or the feeling you want in the music.</p>
+
+                <input id="sampleName" name="name" type="text" required autocomplete="name"
+                       class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]"
+                       placeholder="Your name">
+                <input id="sampleEmail" name="email" type="email" required autocomplete="email"
+                       class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]"
+                       placeholder="Your email">
+                <textarea id="sampleText" name="message" class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-4 focus:outline-none focus:border-[#9B7EBD]" rows="4" 
+                          placeholder="Example: I want something powerful and emotional, like starting over after a big life change..."></textarea>
+
+                <div id="sampleStatus" class="hidden text-sm rounded-2xl p-4 mb-4"></div>
+
+                <div class="flex gap-3">
+                    <button type="button" onclick="hideSampleModal()" 
+                            class="flex-1 py-3 rounded-2xl border border-white/30 hover:bg-white/5">Cancel</button>
+                    <button type="submit" id="sampleSubmit"
+                            class="flex-1 bg-[#9B7EBD] hover:bg-[#8B6DB0] py-3 rounded-2xl font-semibold transition-all disabled:opacity-60 disabled:cursor-not-allowed">Send my request</button>
+                </div>
+                <p class="text-[10px] text-center text-gray-500 mt-3">I'll create and send it to you personally.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- CUSTOM VIDEO MODAL -->
+    <div id="videoModal" data-modal class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
+        <div class="bg-[#0f172a] border border-white/10 p-8 rounded-3xl max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold">Request a custom video</h3>
+                <button type="button" onclick="hideVideoModal()" class="text-gray-400 hover:text-white">✕</button>
             </div>
-            <p class="text-[10px] text-center text-gray-500 mt-3">I'll create and send it to you personally.</p>
+
+            <form id="videoForm" novalidate onsubmit="submitVideoRequest(event)">
+                <p class="text-gray-400 mb-4">Tell me about your brand and the video you have in mind.</p>
+
+                <input id="videoName" name="name" type="text" required autocomplete="name"
+                       class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]"
+                       placeholder="Your name">
+                <input id="videoEmail" name="email" type="email" required autocomplete="email"
+                       class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]"
+                       placeholder="Your email">
+                <input id="videoCompany" name="company" type="text" autocomplete="organization"
+                       class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]"
+                       placeholder="Company or brand (optional)">
+                <textarea id="videoText" name="message" required class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-4 focus:outline-none focus:border-[#9B7EBD]" rows="4"
+                          placeholder="Describe the video: purpose, style, length, where it will be used..."></textarea>
+
+                <div id="videoStatus" class="hidden text-sm rounded-2xl p-4 mb-4"></div>
+
+                <div class="flex gap-3">
+                    <button type="button" onclick="hideVideoModal()"
+                            class="flex-1 py-3 rounded-2xl border border-white/30 hover:bg-white/5">Cancel</button>
+                    <button type="submit" id="videoSubmit"
+                            class="flex-1 bg-[#9B7EBD] hover:bg-[#8B6DB0] py-3 rounded-2xl font-semibold transition-all disabled:opacity-60 disabled:cursor-not-allowed">Send my request</button>
+                </div>
+                <p class="text-[10px] text-center text-gray-500 mt-3">BB will reply to you personally by email.</p>
+            </form>
         </div>
     </div>
 
     <!-- CARE PLAN MODAL -->
-    <div id="careModal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
-        <div class="bg-[#0f172a] border border-white/10 p-8 rounded-3xl max-w-md w-full mx-4">
+    <div id="careModal" data-modal class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
+        <div class="bg-[#0f172a] border border-white/10 p-8 rounded-3xl max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto">
             <h3 class="text-2xl font-semibold mb-2">Personalized Care Plan</h3>
             <p class="text-gray-400 mb-6">One-time $11 payment via Solana.</p>
             
@@ -335,7 +381,7 @@
                 <p class="font-medium mb-2">How it works:</p>
                 <ol class="list-decimal pl-5 space-y-1 text-gray-300">
                     <li>Pay $11 SOL to the wallet below</li>
-                    <li>Fill out the short assessment form</li>
+                    <li>Fill in your details and short assessment below</li>
                     <li>Receive your personalized care plan within 48h</li>
                 </ol>
             </div>
@@ -346,12 +392,29 @@
                 <p class="text-[10px] text-gray-500 mt-1">Phantom wallet</p>
             </div>
 
-            <button onclick="submitCareRequest()" 
-                    class="w-full bg-[#9B7EBD] py-3.5 rounded-2xl font-semibold mb-3">
-                I've sent the payment — Continue
-            </button>
+            <form id="careForm" novalidate onsubmit="submitCareRequest(event)">
+                <input id="careName" name="name" type="text" required autocomplete="name"
+                       class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]"
+                       placeholder="Your name">
+                <input id="careEmail" name="email" type="email" required autocomplete="email"
+                       class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]"
+                       placeholder="Your email">
+                <input id="careTx" name="transaction" type="text" autocomplete="off"
+                       class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-1 focus:outline-none focus:border-[#9B7EBD]"
+                       placeholder="Solana transaction signature or your sender wallet">
+                <p class="text-[10px] text-gray-500 mb-3 pl-1">Optional, but it helps BB confirm your payment faster.</p>
+                <textarea id="careText" name="assessment" required class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-4 focus:outline-none focus:border-[#9B7EBD]" rows="4"
+                          placeholder="What areas of your life feel most in need of care right now?"></textarea>
+
+                <div id="careStatus" class="hidden text-sm rounded-2xl p-4 mb-4"></div>
+
+                <button type="submit" id="careSubmit"
+                        class="w-full bg-[#9B7EBD] hover:bg-[#8B6DB0] py-3.5 rounded-2xl font-semibold mb-3 transition-all disabled:opacity-60 disabled:cursor-not-allowed">
+                    I've sent the payment, send my details
+                </button>
+            </form>
             
-            <button onclick="hideCareModal()" 
+            <button type="button" onclick="hideCareModal()" 
                     class="w-full py-3 text-sm text-gray-400 hover:text-white">Cancel</button>
         </div>
     </div>
@@ -397,51 +460,201 @@
             currentlyPlaying = null;
         });
 
-        function showSampleModal() {
-            const modal = document.getElementById('sampleModal');
+        const FORM_ENDPOINT = 'https://formsubmit.co/ajax/lavozdebeatriz@gmail.com';
+        const FALLBACK_EMAIL = 'lavozdebeatriz@gmail.com';
+
+        function openModal(id) {
+            const modal = document.getElementById(id);
             modal.classList.remove('hidden');
             modal.classList.add('flex');
+            const firstInput = modal.querySelector('input, textarea');
+            if (firstInput) setTimeout(() => firstInput.focus(), 50);
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        function isValidEmail(value) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+        }
+
+        function setStatus(el, type, text) {
+            el.className = 'text-sm rounded-2xl p-4 mb-4 ' + (type === 'success'
+                ? 'bg-[#9B7EBD]/15 border border-[#9B7EBD]/50 text-white'
+                : 'bg-red-500/10 border border-red-400/40 text-red-200');
+            el.textContent = text;
+        }
+
+        function clearStatus(el) {
+            el.className = 'hidden text-sm rounded-2xl p-4 mb-4';
+            el.textContent = '';
+        }
+
+        async function sendForm(opts) {
+            const button = document.getElementById(opts.buttonId);
+            const status = document.getElementById(opts.statusId);
+            const originalLabel = button.textContent.trim();
+            clearStatus(status);
+
+            if (opts.validate) {
+                const problem = opts.validate();
+                if (problem) {
+                    setStatus(status, 'error', problem);
+                    return;
+                }
+            }
+
+            button.disabled = true;
+            button.textContent = 'Sending...';
+
+            try {
+                const response = await fetch(FORM_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(Object.assign({}, opts.data, {
+                        _subject: opts.subject,
+                        _template: 'table'
+                    }))
+                });
+                const result = await response.json().catch(() => ({}));
+                if (!response.ok || String(result.success) === 'false') {
+                    throw new Error(result.message || ('HTTP ' + response.status));
+                }
+                document.getElementById(opts.formId).reset();
+                setStatus(status, 'success', opts.successText);
+                button.textContent = 'Sent';
+            } catch (err) {
+                console.error('[BB Healing Music] Form error:', err);
+                setStatus(status, 'error', 'Sorry, something went wrong and your request could not be sent. Please try again, or email BB directly at ' + FALLBACK_EMAIL + '.');
+                button.disabled = false;
+                button.textContent = originalLabel;
+            }
+        }
+
+        function resetFormState(formId, statusId, buttonId, label) {
+            clearStatus(document.getElementById(statusId));
+            const button = document.getElementById(buttonId);
+            button.disabled = false;
+            button.textContent = label;
+        }
+
+        function requireNameEmail(nameId, emailId) {
+            const name = document.getElementById(nameId).value.trim();
+            const email = document.getElementById(emailId).value.trim();
+            if (!name) return 'Please enter your name.';
+            if (!isValidEmail(email)) return 'Please enter a valid email address.';
+            return null;
+        }
+
+        // FREE SAMPLE
+        function showSampleModal() {
+            resetFormState('sampleForm', 'sampleStatus', 'sampleSubmit', 'Send my request');
+            openModal('sampleModal');
         }
         
         function hideSampleModal() {
-            const modal = document.getElementById('sampleModal');
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
+            closeModal('sampleModal');
         }
         
-        function submitSampleRequest() {
-            hideSampleModal();
-            alert("Thank you! Your request has been received.\n\nBB will create and send your 1-minute sample personally.");
+        function submitSampleRequest(event) {
+            if (event) event.preventDefault();
+            sendForm({
+                formId: 'sampleForm',
+                buttonId: 'sampleSubmit',
+                statusId: 'sampleStatus',
+                subject: 'New free sample request - BB Healing Music',
+                validate: () => requireNameEmail('sampleName', 'sampleEmail'),
+                data: {
+                    name: document.getElementById('sampleName').value.trim(),
+                    email: document.getElementById('sampleEmail').value.trim(),
+                    message: document.getElementById('sampleText').value.trim()
+                },
+                successText: 'Thank you! Your request was sent. BB will create your sample and email you personally.'
+            });
         }
 
+        // CUSTOM VIDEO
         function showVideoForm() {
-            alert("Custom video request form would open here.\n\nYou can connect this button to a Google Form or Typeform later.");
+            resetFormState('videoForm', 'videoStatus', 'videoSubmit', 'Send my request');
+            openModal('videoModal');
         }
 
+        function hideVideoModal() {
+            closeModal('videoModal');
+        }
+
+        function submitVideoRequest(event) {
+            if (event) event.preventDefault();
+            sendForm({
+                formId: 'videoForm',
+                buttonId: 'videoSubmit',
+                statusId: 'videoStatus',
+                subject: 'New custom video request - BB Healing Music',
+                validate: () => requireNameEmail('videoName', 'videoEmail')
+                    || (document.getElementById('videoText').value.trim() ? null : 'Please describe the video you would like.'),
+                data: {
+                    name: document.getElementById('videoName').value.trim(),
+                    email: document.getElementById('videoEmail').value.trim(),
+                    company: document.getElementById('videoCompany').value.trim(),
+                    message: document.getElementById('videoText').value.trim()
+                },
+                successText: 'Thank you! Your video request was sent. BB will reply to you personally by email.'
+            });
+        }
+
+        // CARE PLAN
         function showCareForm() {
-            const modal = document.getElementById('careModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+            resetFormState('careForm', 'careStatus', 'careSubmit', "I've sent the payment, send my details");
+            openModal('careModal');
         }
         
         function hideCareModal() {
-            const modal = document.getElementById('careModal');
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
+            closeModal('careModal');
         }
         
-        function submitCareRequest() {
-            hideCareModal();
-            alert("Perfect! Once you send the $11 SOL, reply to this message or fill the short assessment.\n\nYour personalized care plan will be delivered within 48 hours.");
+        function submitCareRequest(event) {
+            if (event) event.preventDefault();
+            sendForm({
+                formId: 'careForm',
+                buttonId: 'careSubmit',
+                statusId: 'careStatus',
+                subject: 'New Care Plan request ($11 SOL) - BB Healing Music',
+                validate: () => requireNameEmail('careName', 'careEmail')
+                    || (document.getElementById('careText').value.trim() ? null : 'Please answer the short assessment question.'),
+                data: {
+                    name: document.getElementById('careName').value.trim(),
+                    email: document.getElementById('careEmail').value.trim(),
+                    transaction_or_wallet: document.getElementById('careTx').value.trim() || '(not provided)',
+                    assessment: document.getElementById('careText').value.trim()
+                },
+                successText: 'Thank you! Your details were sent. Once BB confirms your $11 SOL payment, your personalized care plan will arrive by email within 48 hours.'
+            });
         }
 
+        // Escape closes only the open modals (never the nav or other fixed elements)
         document.addEventListener('keydown', function(e) {
             if (e.key === "Escape") {
-                document.querySelectorAll('.fixed').forEach(modal => {
+                document.querySelectorAll('[data-modal]').forEach(modal => {
                     modal.classList.remove('flex');
                     modal.classList.add('hidden');
                 });
             }
+        });
+
+        // Clicking the dark backdrop closes the modal
+        document.querySelectorAll('[data-modal]').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('flex');
+                    modal.classList.add('hidden');
+                }
+            });
         });
 
         window.onload = function() {
