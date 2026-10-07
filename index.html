@@ -141,6 +141,20 @@
         </div>
     </header>
 
+    <!-- Featured Video -->
+    <section id="featured-video" class="max-w-5xl mx-auto px-6 pt-20">
+        <div class="text-center mb-8">
+            <h2 class="text-4xl font-semibold mb-3">Feel the vibration</h2>
+            <p class="text-[#9B7EBD]">A custom video by BB Healing Music</p>
+        </div>
+        <div class="relative rounded-3xl overflow-hidden border elegant-border bg-white/5">
+            <video id="featuredVideo" class="w-full h-auto block" src="video/bb-healing-custom-video.mp4" poster="video/bb-healing-custom-video-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+            <button id="videoSoundBtn" type="button" aria-label="Toggle sound" class="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-black/60 hover:bg-[#9B7EBD] text-white flex items-center justify-center transition-all">
+                <i class="fas fa-volume-xmark"></i>
+            </button>
+        </div>
+    </section>
+
     <!-- HEALING MUSIC -->
     <section id="healing-music" class="max-w-6xl mx-auto px-6 py-20">
         <div class="text-center mb-12">
@@ -252,12 +266,12 @@
                     Request a custom video
                 </button>
             </div>
-            <div class="bg-white/5 border elegant-border rounded-3xl p-8 flex items-center justify-center min-h-[220px]">
-                <div class="text-center">
-                    <i class="fas fa-video text-4xl text-[#9B7EBD] mb-4"></i>
-                    <p class="text-gray-400">High-quality custom video previews available upon request</p>
-                </div>
-            </div>
+            <a href="#featured-video" class="group relative block bg-white/5 border elegant-border rounded-3xl overflow-hidden min-h-[220px]">
+                <img src="video/bb-healing-custom-video-poster.jpg" alt="BB Healing Music custom video" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                <span class="absolute inset-0 flex items-center justify-center">
+                    <span class="w-16 h-16 rounded-full bg-[#9B7EBD]/90 text-white flex items-center justify-center"><i class="fas fa-play ml-1"></i></span>
+                </span>
+            </a>
         </div>
     </section>
 
@@ -446,6 +460,7 @@
                 samplePlayer.src = src;
                 samplePlayer.dataset.track = src;
             }
+            if (typeof pauseFeaturedVideo === 'function') pauseFeaturedVideo();
             samplePlayer.play();
             icon.classList.remove('fa-play');
             icon.classList.add('fa-pause');
@@ -659,6 +674,43 @@
 
         window.onload = function() {
             console.log('%c[BB Healing Music] Site ready', 'color:#9B7EBD');
+        }
+
+        const featuredVideo = document.getElementById('featuredVideo');
+        const videoSoundBtn = document.getElementById('videoSoundBtn');
+        let videoUserPaused = false;
+        function setVideoIcon() {
+            const i = videoSoundBtn.querySelector('i');
+            i.classList.toggle('fa-volume-xmark', featuredVideo.muted);
+            i.classList.toggle('fa-volume-high', !featuredVideo.muted);
+        }
+        function pauseFeaturedVideo() {
+            featuredVideo.muted = true;
+            setVideoIcon();
+        }
+        videoSoundBtn.addEventListener('click', function () {
+            featuredVideo.muted = !featuredVideo.muted;
+            if (!featuredVideo.muted) {
+                if (!samplePlayer.paused) {
+                    samplePlayer.pause();
+                    if (currentlyPlaying) {
+                        const ci = currentlyPlaying.querySelector('i');
+                        ci.classList.remove('fa-pause');
+                        ci.classList.add('fa-play');
+                        currentlyPlaying = null;
+                    }
+                }
+                featuredVideo.play().catch(function () {});
+            }
+            setVideoIcon();
+        });
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) featuredVideo.play().catch(function () {});
+                    else featuredVideo.pause();
+                });
+            }, { threshold: 0.25 }).observe(featuredVideo);
         }
     </script>
     
