@@ -173,9 +173,14 @@
                         <p class="font-semibold text-lg">Avicii Tribute</p>
                         <p class="text-sm text-gray-400">Energetic & uplifting</p>
                     </div>
-                    <button type="button" onclick="togglePlay(this)" data-src="audio/avicii.mp3" class="text-[#9B7EBD] hover:text-white w-10 h-10 flex items-center justify-center">
-                        <i class="fas fa-play text-2xl"></i>
-                    </button>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <button type="button" onclick="togglePlay(this)" data-src="audio/avicii.mp3" aria-label="Play Avicii Tribute" class="text-[#9B7EBD] hover:text-white w-10 h-10 flex items-center justify-center">
+                            <i class="fas fa-play text-2xl"></i>
+                        </button>
+                        <button type="button" onclick="showBuyModal('single', 'Avicii Tribute')" class="bg-[#9B7EBD] hover:bg-[#8B6DB0] text-white text-sm font-semibold px-3.5 py-2 rounded-xl transition-all whitespace-nowrap">
+                            Buy &middot; $3
+                        </button>
+                    </div>
                 </div>
                 <div class="h-1.5 bg-white/10 rounded-full overflow-hidden">
                     <div class="h-1.5 w-[78%] bg-[#9B7EBD] rounded-full"></div>
@@ -189,9 +194,14 @@
                         <p class="font-semibold text-lg">Amy Winehouse Soul</p>
                         <p class="text-sm text-gray-400">Emotional & raw</p>
                     </div>
-                    <button type="button" onclick="togglePlay(this)" data-src="audio/amy.mp3" class="text-[#9B7EBD] hover:text-white w-10 h-10 flex items-center justify-center">
-                        <i class="fas fa-play text-2xl"></i>
-                    </button>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <button type="button" onclick="togglePlay(this)" data-src="audio/amy.mp3" aria-label="Play Amy Winehouse Soul" class="text-[#9B7EBD] hover:text-white w-10 h-10 flex items-center justify-center">
+                            <i class="fas fa-play text-2xl"></i>
+                        </button>
+                        <button type="button" onclick="showBuyModal('single', 'Amy Winehouse Soul')" class="bg-[#9B7EBD] hover:bg-[#8B6DB0] text-white text-sm font-semibold px-3.5 py-2 rounded-xl transition-all whitespace-nowrap">
+                            Buy &middot; $3
+                        </button>
+                    </div>
                 </div>
                 <div class="h-1.5 bg-white/10 rounded-full overflow-hidden">
                     <div class="h-1.5 w-[52%] bg-[#9B7EBD] rounded-full"></div>
@@ -205,15 +215,32 @@
                         <p class="font-semibold text-lg">Sacred Awakening</p>
                         <p class="text-sm text-gray-400">Cinematic</p>
                     </div>
-                    <button type="button" onclick="togglePlay(this)" data-src="audio/sacred-awakening.mp3" class="text-[#9B7EBD] hover:text-white w-10 h-10 flex items-center justify-center">
-                        <i class="fas fa-play text-2xl"></i>
-                    </button>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <button type="button" onclick="togglePlay(this)" data-src="audio/sacred-awakening.mp3" aria-label="Play Sacred Awakening" class="text-[#9B7EBD] hover:text-white w-10 h-10 flex items-center justify-center">
+                            <i class="fas fa-play text-2xl"></i>
+                        </button>
+                        <button type="button" onclick="showBuyModal('single', 'Sacred Awakening')" class="bg-[#9B7EBD] hover:bg-[#8B6DB0] text-white text-sm font-semibold px-3.5 py-2 rounded-xl transition-all whitespace-nowrap">
+                            Buy &middot; $3
+                        </button>
+                    </div>
                 </div>
                 <div class="h-1.5 bg-white/10 rounded-full overflow-hidden">
                     <div class="h-1.5 w-[91%] bg-[#9B7EBD] rounded-full"></div>
                 </div>
                 <p class="text-xs text-gray-500 mt-2">Most requested</p>
             </div>
+        </div>
+
+        <!-- Song bundle offer -->
+        <div class="max-w-5xl mx-auto mt-8 bg-gradient-to-r from-[#9B7EBD]/20 to-white/5 border border-[#9B7EBD]/40 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
+            <div>
+                <p class="text-xs uppercase tracking-widest text-[#9B7EBD] font-semibold mb-1">Bundle offer</p>
+                <p class="text-2xl md:text-3xl font-semibold">5 songs for $7</p>
+                <p class="text-gray-300 mt-1">Pick any 5 songs from my <a href="https://elevenlabs.io/app/music/explore/creator/qEpFe5HWZnebX5SW2TF6" target="_blank" rel="noopener" class="text-[#9B7EBD] underline hover:text-white">ElevenLabs creator profile</a>. Single songs are $3 each. Paid in SOL.</p>
+            </div>
+            <button type="button" onclick="showBuyModal('bundle')" class="bg-[#9B7EBD] hover:bg-[#8B6DB0] text-white px-8 py-3.5 rounded-2xl font-semibold text-lg whitespace-nowrap transition-all inline-flex items-center gap-2">
+                <i class="fas fa-music"></i><span>Get 5 songs &middot; $7</span>
+            </button>
         </div>
 
         <div class="text-center mt-12">
@@ -452,6 +479,68 @@
         </div>
     </div>
 
+    <!-- SONG PURCHASE MODAL -->
+    <div id="buyModal" data-modal class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
+        <div class="bg-[#0f172a] border border-white/10 p-8 rounded-3xl max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <h3 id="buyTitle" class="text-2xl font-semibold mb-2">Buy this song</h3>
+            <p id="buyPriceLine" class="text-gray-400 mb-6">$3 in SOL, paid to my Phantom wallet.</p>
+
+            <div class="bg-white/5 rounded-2xl p-5 mb-6 text-sm">
+                <p class="font-medium mb-2">How it works:</p>
+                <ol class="list-decimal pl-5 space-y-1 text-gray-300">
+                    <li>Send <span class="buyAmount font-semibold text-white">$3</span> in SOL to the wallet below</li>
+                    <li>Fill in your name, email, song(s) and the transaction signature</li>
+                    <li>BBella checks the payment and emails you the MP3</li>
+                </ol>
+            </div>
+
+            <div class="mb-6">
+                <p class="text-xs text-gray-400 mb-1">Send <span class="buyAmount">$3</span> in SOL to:</p>
+                <div class="flex items-stretch gap-2">
+                    <div id="buyWallet" class="flex-1 font-mono text-sm bg-black/40 p-3 rounded-xl break-all">AU8Q79gawoie2PMzNJTU6uCskcexAe5pdDqcvXmvTKmb</div>
+                    <button type="button" id="buyCopyBtn" onclick="copyBuyWallet()" aria-label="Copy wallet address" class="shrink-0 w-12 rounded-xl bg-white/10 hover:bg-[#9B7EBD] transition-all flex items-center justify-center">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                <p class="text-[10px] text-gray-500 mt-1">Phantom wallet (Solana)</p>
+            </div>
+
+            <form id="buyForm" novalidate onsubmit="submitBuyRequest(event)">
+                <input id="buyName" name="name" type="text" required autocomplete="name"
+                       class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]"
+                       placeholder="Your name">
+                <input id="buyEmail" name="email" type="email" required autocomplete="email"
+                       class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]"
+                       placeholder="Your email (the MP3 will be sent here)">
+                <div id="buySingleWrap">
+                    <label for="buySong" class="block text-xs text-gray-400 mb-1 pl-1">Song</label>
+                    <input id="buySong" name="song" type="text" readonly
+                           class="w-full bg-black/30 border border-white/10 rounded-2xl p-4 mb-3 text-gray-200 cursor-default focus:outline-none">
+                </div>
+                <div id="buyBundleWrap" class="hidden">
+                    <label for="buySongs" class="block text-xs text-gray-400 mb-1 pl-1">Your 5 songs</label>
+                    <textarea id="buySongs" name="songs" rows="5"
+                              class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-1 focus:outline-none focus:border-[#9B7EBD]"
+                              placeholder="Write the titles of the 5 songs you want, one per line"></textarea>
+                    <p class="text-xs text-gray-400 mb-3 pl-1">Choose from my <a href="https://elevenlabs.io/app/music/explore/creator/qEpFe5HWZnebX5SW2TF6" target="_blank" rel="noopener" class="text-[#9B7EBD] underline hover:text-white">ElevenLabs creator profile</a>.</p>
+                </div>
+                <input id="buyTx" name="transaction" type="text" required autocomplete="off"
+                       class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-4 focus:outline-none focus:border-[#9B7EBD]"
+                       placeholder="Solana transaction signature">
+
+                <div id="buyStatus" class="hidden text-sm rounded-2xl p-4 mb-4"></div>
+
+                <button type="submit" id="buySubmit"
+                        class="w-full bg-[#9B7EBD] hover:bg-[#8B6DB0] py-3.5 rounded-2xl font-semibold mb-3 transition-all disabled:opacity-60 disabled:cursor-not-allowed">
+                    I've sent the payment, send my order
+                </button>
+            </form>
+
+            <button type="button" onclick="hideBuyModal()"
+                    class="w-full py-3 text-sm text-gray-400 hover:text-white">Cancel</button>
+        </div>
+    </div>
+
     <audio id="samplePlayer" preload="none"></audio>
     <script>
         let currentlyPlaying = null;
@@ -668,6 +757,76 @@
                     assessment: document.getElementById('careText').value.trim()
                 },
                 successText: 'Thank you! Your details were sent. Once BBella confirms your $11 SOL payment, your personalized care plan will arrive by email within 48 hours.'
+            });
+        }
+
+        // SONG PURCHASE
+        let buyMode = 'single';
+        const BUY_LABEL = "I've sent the payment, send my order";
+
+        function showBuyModal(mode, song) {
+            buyMode = mode === 'bundle' ? 'bundle' : 'single';
+            const price = buyMode === 'bundle' ? '$7' : '$3';
+            document.getElementById('buyForm').reset();
+            resetFormState('buyForm', 'buyStatus', 'buySubmit', BUY_LABEL);
+            document.getElementById('buyTitle').textContent = buyMode === 'bundle' ? '5 songs bundle' : 'Buy this song';
+            document.getElementById('buyPriceLine').textContent = buyMode === 'bundle'
+                ? '5 songs of your choice for $7 in SOL, paid to my Phantom wallet.'
+                : '"' + song + '" for $3 in SOL, paid to my Phantom wallet.';
+            document.querySelectorAll('#buyModal .buyAmount').forEach(el => { el.textContent = price; });
+            document.getElementById('buySong').value = buyMode === 'single' ? (song || '') : '';
+            document.getElementById('buySingleWrap').classList.toggle('hidden', buyMode === 'bundle');
+            document.getElementById('buyBundleWrap').classList.toggle('hidden', buyMode !== 'bundle');
+            openModal('buyModal');
+        }
+
+        function hideBuyModal() {
+            closeModal('buyModal');
+        }
+
+        function copyBuyWallet() {
+            const wallet = document.getElementById('buyWallet').textContent.trim();
+            const btn = document.getElementById('buyCopyBtn');
+            const done = () => {
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i>'; }, 1500);
+            };
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(wallet).then(done).catch(() => {});
+            } else {
+                const range = document.createRange();
+                range.selectNodeContents(document.getElementById('buyWallet'));
+                const sel = window.getSelection();
+                sel.removeAllRanges();
+                sel.addRange(range);
+                try { document.execCommand('copy'); done(); } catch (e) {}
+            }
+        }
+
+        function submitBuyRequest(event) {
+            if (event) event.preventDefault();
+            const isBundle = buyMode === 'bundle';
+            const songs = isBundle
+                ? document.getElementById('buySongs').value.trim()
+                : document.getElementById('buySong').value.trim();
+            const price = isBundle ? '$7' : '$3';
+            sendForm({
+                formId: 'buyForm',
+                buttonId: 'buySubmit',
+                statusId: 'buyStatus',
+                subject: isBundle ? 'New song purchase ($7 SOL bundle) - BBella 777' : 'New song purchase ($3 SOL) - BBella 777',
+                validate: () => requireNameEmail('buyName', 'buyEmail')
+                    || (songs ? null : (isBundle ? 'Please write the 5 songs you want.' : 'Please choose a song.'))
+                    || (document.getElementById('buyTx').value.trim() ? null : 'Please paste your Solana transaction signature.'),
+                data: {
+                    order_type: isBundle ? 'Bundle (5 songs)' : 'Single song',
+                    price: price + ' in SOL',
+                    songs: songs,
+                    name: document.getElementById('buyName').value.trim(),
+                    email: document.getElementById('buyEmail').value.trim(),
+                    transaction_signature: document.getElementById('buyTx').value.trim()
+                },
+                successText: 'Thank you! Your order was sent. Once BBella confirms your ' + price + ' SOL payment, your MP3' + (isBundle ? 's' : '') + ' will arrive by email.'
             });
         }
 
