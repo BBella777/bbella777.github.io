@@ -178,7 +178,7 @@
                             <i class="fas fa-play text-2xl"></i>
                         </button>
                         <button type="button" onclick="showBuyModal('single', 'Avicii Tribute')" class="bg-[#9B7EBD] hover:bg-[#8B6DB0] text-white text-sm font-semibold px-3.5 py-2 rounded-xl transition-all whitespace-nowrap">
-                            Buy &middot; $3
+                            Buy &middot; &euro;2
                         </button>
                     </div>
                 </div>
@@ -199,7 +199,7 @@
                             <i class="fas fa-play text-2xl"></i>
                         </button>
                         <button type="button" onclick="showBuyModal('single', 'Amy Winehouse Soul')" class="bg-[#9B7EBD] hover:bg-[#8B6DB0] text-white text-sm font-semibold px-3.5 py-2 rounded-xl transition-all whitespace-nowrap">
-                            Buy &middot; $3
+                            Buy &middot; &euro;2
                         </button>
                     </div>
                 </div>
@@ -220,7 +220,7 @@
                             <i class="fas fa-play text-2xl"></i>
                         </button>
                         <button type="button" onclick="showBuyModal('single', 'Sacred Awakening')" class="bg-[#9B7EBD] hover:bg-[#8B6DB0] text-white text-sm font-semibold px-3.5 py-2 rounded-xl transition-all whitespace-nowrap">
-                            Buy &middot; $3
+                            Buy &middot; &euro;2
                         </button>
                     </div>
                 </div>
@@ -235,19 +235,75 @@
         <div class="max-w-5xl mx-auto mt-8 bg-gradient-to-r from-[#9B7EBD]/20 to-white/5 border border-[#9B7EBD]/40 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
             <div>
                 <p class="text-xs uppercase tracking-widest text-[#9B7EBD] font-semibold mb-1">Bundle offer</p>
-                <p class="text-2xl md:text-3xl font-semibold">5 songs for $7</p>
-                <p class="text-gray-300 mt-1">Pick any 5 songs from my <a href="https://elevenlabs.io/app/music/explore/creator/qEpFe5HWZnebX5SW2TF6" target="_blank" rel="noopener" class="text-[#9B7EBD] underline hover:text-white">ElevenLabs creator profile</a>. Single songs are $3 each. Paid in SOL.</p>
+                <p class="text-2xl md:text-3xl font-semibold">6 songs for &euro;7</p>
+                <p class="text-gray-300 mt-1">Pick any 6 songs from my <a href="https://elevenlabs.io/app/music/explore/creator/qEpFe5HWZnebX5SW2TF6" target="_blank" rel="noopener" class="text-[#9B7EBD] underline hover:text-white">ElevenLabs creator profile</a>. Single songs are &euro;2 each. Paid in SOL.</p>
             </div>
             <button type="button" onclick="showBuyModal('bundle')" class="bg-[#9B7EBD] hover:bg-[#8B6DB0] text-white px-8 py-3.5 rounded-2xl font-semibold text-lg whitespace-nowrap transition-all inline-flex items-center gap-2">
-                <i class="fas fa-music"></i><span>Get 5 songs &middot; $7</span>
+                <i class="fas fa-music"></i><span>Get 6 songs &middot; &euro;7</span>
             </button>
         </div>
 
-        <div class="text-center mt-12">
-            <button onclick="showSampleModal()" 
-                    class="bg-white text-[#020617] hover:bg-gray-200 transition-all px-9 py-3.5 rounded-2xl font-semibold text-lg inline-flex items-center gap-2">
-                <span>Create your personalized song</span>
-            </button>
+        <!-- PERSONALIZED SONGS -->
+        <div id="personalized-songs" class="max-w-5xl mx-auto mt-16 scroll-mt-24">
+            <div class="text-center mb-8">
+                <p class="text-xs uppercase tracking-widest text-[#9B7EBD] font-semibold mb-2">Made just for you</p>
+                <h3 class="text-4xl md:text-5xl title-font mb-3">Personalized Songs</h3>
+                <p class="text-gray-300 max-w-2xl mx-auto">Your story, your names, your feelings, turned into a song with my voice and music.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Paid personalized song -->
+                <div class="music-card relative bg-white/5 border elegant-border rounded-3xl p-7 flex flex-col">
+                    <div class="flex items-start justify-between gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-[#9B7EBD]/20 text-[#9B7EBD] flex items-center justify-center text-xl shrink-0">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-4xl font-semibold leading-none">&euro;9</p>
+                            <p class="text-xs text-gray-400 mt-1">paid in SOL</p>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl title-font mb-2">Your personalized song</h4>
+                    <p class="text-gray-300 mb-4">A full song, up to 6 minutes, made for you or someone you love. With my voice and music.</p>
+                    <ul class="text-sm text-gray-300 space-y-2 mb-6">
+                        <li class="flex gap-2"><i class="fas fa-check text-[#9B7EBD] mt-1"></i><span>Birthday, love, memorial, pets, healing and more</span></li>
+                        <li class="flex gap-2"><i class="fas fa-check text-[#9B7EBD] mt-1"></i><span>Names, memories and words you want inside</span></li>
+                        <li class="flex gap-2"><i class="fas fa-check text-[#9B7EBD] mt-1"></i><span>Delivered by email as MP3, usually within 3-5 days</span></li>
+                    </ul>
+                    <button type="button" onclick="showCustomSongModal()" class="mt-auto w-full bg-[#9B7EBD] hover:bg-[#8B6DB0] text-white py-3.5 rounded-2xl font-semibold text-lg transition-all inline-flex items-center justify-center gap-2">
+                        <i class="fas fa-music"></i><span>Order my song &middot; &euro;9</span>
+                    </button>
+                </div>
+
+                <!-- Free Doginal anthem -->
+                <div class="music-card relative bg-gradient-to-br from-[#9B7EBD]/25 to-white/5 border border-[#9B7EBD]/60 rounded-3xl p-7 flex flex-col shadow-[0_0_45px_rgba(155,126,189,0.35)]">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#9B7EBD] text-white text-xs font-semibold tracking-wider uppercase px-4 py-1.5 rounded-full whitespace-nowrap shadow-lg shadow-[#9B7EBD]/40">FREE &middot; Tribute to the pack</span>
+                    <div class="flex items-start justify-between gap-4 mb-4 mt-2">
+                        <div class="w-12 h-12 rounded-2xl bg-[#9B7EBD]/30 text-white flex items-center justify-center text-xl shrink-0">
+                            <i class="fas fa-paw"></i>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-4xl font-semibold leading-none text-[#C9B6E4]">Free</p>
+                            <p class="text-xs text-gray-400 mt-1">my gift to the pack</p>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl title-font mb-2">Doginal Dogs Anthem</h4>
+                    <p class="text-gray-300 mb-4">A special tribute to the pack: a song for your Doginal Dog, inspired by its look, its personality and its story.</p>
+                    <ul class="text-sm text-gray-300 space-y-2 mb-6">
+                        <li class="flex gap-2"><i class="fas fa-check text-[#9B7EBD] mt-1"></i><span>For Doginal Dogs holders</span></li>
+                        <li class="flex gap-2"><i class="fas fa-check text-[#9B7EBD] mt-1"></i><span>Tell me your dog's number, name and vibe</span></li>
+                        <li class="flex gap-2"><i class="fas fa-check text-[#9B7EBD] mt-1"></i><span>Delivered by email as MP3</span></li>
+                    </ul>
+                    <button type="button" onclick="showAnthemModal()" class="mt-auto w-full bg-white text-[#020617] hover:bg-gray-200 py-3.5 rounded-2xl font-semibold text-lg transition-all inline-flex items-center justify-center gap-2">
+                        <i class="fas fa-paw"></i><span>Get my free Anthem</span>
+                    </button>
+                </div>
+            </div>
+
+            <p class="text-center text-gray-400 mt-8">
+                Not sure yet?
+                <button type="button" onclick="showSampleModal()" class="text-[#9B7EBD] underline hover:text-white font-medium">Get your 1-minute free sample</button>
+            </p>
         </div>
     </section>
 
@@ -276,7 +332,13 @@
             </div>
         </div>
 
-        
+        <div class="max-w-3xl mx-auto mb-12 text-center">
+            <button type="button" onclick="showAnthemModal()" class="inline-flex items-center gap-2 px-7 py-3 rounded-2xl border border-[#9B7EBD] text-white hover:bg-[#9B7EBD] transition-all font-semibold shadow-[0_0_30px_rgba(155,126,189,0.3)]">
+                <i class="fas fa-paw"></i><span>Get your free Doginal Anthem</span>
+            </button>
+            <p class="text-xs text-gray-500 mt-2">A song for your Doginal Dog. My tribute to the pack.</p>
+        </div>
+
         <div class="max-w-3xl mx-auto">
             <div class="bg-white/5 border elegant-border rounded-3xl overflow-hidden">
                 <div class="aspect-[16/9] bg-gradient-to-br from-[#1E3A5F] to-black flex items-center justify-center relative">
@@ -483,19 +545,19 @@
     <div id="buyModal" data-modal class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
         <div class="bg-[#0f172a] border border-white/10 p-8 rounded-3xl max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto">
             <h3 id="buyTitle" class="text-2xl font-semibold mb-2">Buy this song</h3>
-            <p id="buyPriceLine" class="text-gray-400 mb-6">$3 in SOL, paid to my Phantom wallet.</p>
+            <p id="buyPriceLine" class="text-gray-400 mb-6">&euro;2 in SOL, paid to my Phantom wallet.</p>
 
             <div class="bg-white/5 rounded-2xl p-5 mb-6 text-sm">
                 <p class="font-medium mb-2">How it works:</p>
                 <ol class="list-decimal pl-5 space-y-1 text-gray-300">
-                    <li>Send <span class="buyAmount font-semibold text-white">$3</span> in SOL to the wallet below</li>
+                    <li>Send the SOL equivalent of <span class="buyAmount font-semibold text-white">&euro;2</span> (at today's rate) to the wallet below</li>
                     <li>Fill in your name, email, song(s) and the transaction signature</li>
                     <li>BBella checks the payment and emails you the MP3</li>
                 </ol>
             </div>
 
             <div class="mb-6">
-                <p class="text-xs text-gray-400 mb-1">Send <span class="buyAmount">$3</span> in SOL to:</p>
+                <p class="text-xs text-gray-400 mb-1">Send <span class="buyAmount">&euro;2</span> in SOL (at today's rate) to:</p>
                 <div class="flex items-stretch gap-2">
                     <div id="buyWallet" class="flex-1 font-mono text-sm bg-black/40 p-3 rounded-xl break-all">AU8Q79gawoie2PMzNJTU6uCskcexAe5pdDqcvXmvTKmb</div>
                     <button type="button" id="buyCopyBtn" onclick="copyBuyWallet()" aria-label="Copy wallet address" class="shrink-0 w-12 rounded-xl bg-white/10 hover:bg-[#9B7EBD] transition-all flex items-center justify-center">
@@ -518,10 +580,10 @@
                            class="w-full bg-black/30 border border-white/10 rounded-2xl p-4 mb-3 text-gray-200 cursor-default focus:outline-none">
                 </div>
                 <div id="buyBundleWrap" class="hidden">
-                    <label for="buySongs" class="block text-xs text-gray-400 mb-1 pl-1">Your 5 songs</label>
+                    <label for="buySongs" class="block text-xs text-gray-400 mb-1 pl-1">Your 6 songs</label>
                     <textarea id="buySongs" name="songs" rows="5"
                               class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-1 focus:outline-none focus:border-[#9B7EBD]"
-                              placeholder="Write the titles of the 5 songs you want, one per line"></textarea>
+                              placeholder="Write the titles of the 6 songs you want, one per line"></textarea>
                     <p class="text-xs text-gray-400 mb-3 pl-1">Choose from my <a href="https://elevenlabs.io/app/music/explore/creator/qEpFe5HWZnebX5SW2TF6" target="_blank" rel="noopener" class="text-[#9B7EBD] underline hover:text-white">ElevenLabs creator profile</a>.</p>
                 </div>
                 <input id="buyTx" name="transaction" type="text" required autocomplete="off"
@@ -538,6 +600,134 @@
 
             <button type="button" onclick="hideBuyModal()"
                     class="w-full py-3 text-sm text-gray-400 hover:text-white">Cancel</button>
+        </div>
+    </div>
+
+    <!-- PERSONALIZED SONG ORDER MODAL -->
+    <div id="customSongModal" data-modal class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
+        <div class="bg-[#0f172a] border border-white/10 p-8 rounded-3xl max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="text-2xl font-semibold">Your personalized song</h3>
+                <button type="button" onclick="hideCustomSongModal()" aria-label="Close" class="text-gray-400 hover:text-white">✕</button>
+            </div>
+            <p class="text-gray-400 mb-6">A full song up to 6 minutes, made for you or someone you love. &euro;9 in SOL, paid to my Phantom wallet.</p>
+
+            <form id="customSongForm" novalidate onsubmit="submitCustomSongRequest(event)">
+                <input id="csName" name="name" type="text" required autocomplete="name" class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]" placeholder="Your name">
+                <input id="csEmail" name="email" type="email" required autocomplete="email" class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]" placeholder="Your email for delivery">
+                <input id="csFor" name="for_whom" type="text" required autocomplete="off" class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]" placeholder="Who is it for? (you, mum...)">
+                <label for="csOccasion" class="block text-xs text-gray-400 mb-1 pl-1">Occasion</label>
+                <select id="csOccasion" name="occasion" required class="w-full bg-[#0b1224] border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD] text-white">
+                    <option value="">Choose an occasion</option>
+                    <option>Birthday</option>
+                    <option>Love / anniversary</option>
+                    <option>Memorial / tribute</option>
+                    <option>Pets</option>
+                    <option>Healing / self-love</option>
+                    <option>Wedding</option>
+                    <option>Friendship</option>
+                    <option>Other</option>
+                </select>
+                <textarea id="csStory" name="story" required rows="5" class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]" placeholder="Tell me the story: names, memories, special words or phrases you want inside the song..."></textarea>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label for="csStyle" class="block text-xs text-gray-400 mb-1 pl-1">Style / mood</label>
+                        <select id="csStyle" name="style" required class="w-full bg-[#0b1224] border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD] text-white">
+                            <option value="">Choose</option>
+                            <option>Healing / meditation</option>
+                            <option>Pop</option>
+                            <option>Rock</option>
+                            <option>Soul</option>
+                            <option>Cinematic</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="csLanguage" class="block text-xs text-gray-400 mb-1 pl-1">Language</label>
+                        <select id="csLanguage" name="language" required class="w-full bg-[#0b1224] border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD] text-white">
+                            <option value="English">English</option>
+                            <option value="Spanish">Spanish</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <label for="csDeadline" class="block text-xs text-gray-400 mb-1 pl-1">When do you need it?</label>
+                <select id="csDeadline" name="deadline" class="w-full bg-[#0b1224] border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD] text-white">
+                    <option value="No rush">No rush</option>
+                    <option value="Within a week">Within a week</option>
+                    <option value="By a specific date (see story)">By a specific date (write it in the story)</option>
+                </select>
+
+                <div class="bg-white/5 rounded-2xl p-5 mt-2 mb-4 text-sm">
+                    <p class="font-medium mb-2">Payment:</p>
+                    <ol class="list-decimal pl-5 space-y-1 text-gray-300 mb-4">
+                        <li>Send the SOL equivalent of <span class="font-semibold text-white">&euro;9</span> (at today's rate) to the wallet below</li>
+                        <li>Paste the transaction signature and send your order</li>
+                        <li>BBella checks the payment and starts your song</li>
+                    </ol>
+                    <p class="text-xs text-gray-400 mb-1">Send &euro;9 in SOL to:</p>
+                    <div class="flex items-stretch gap-2">
+                        <div id="csWallet" class="flex-1 font-mono text-sm bg-black/40 p-3 rounded-xl break-all">AU8Q79gawoie2PMzNJTU6uCskcexAe5pdDqcvXmvTKmb</div>
+                        <button type="button" id="csCopyBtn" onclick="copyWallet('csWallet', 'csCopyBtn')" aria-label="Copy wallet address" class="shrink-0 w-12 rounded-xl bg-white/10 hover:bg-[#9B7EBD] transition-all flex items-center justify-center">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-1">Phantom wallet (Solana)</p>
+                </div>
+
+                <input id="csTx" name="transaction" type="text" required autocomplete="off" class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-4 focus:outline-none focus:border-[#9B7EBD]" placeholder="Solana transaction signature">
+
+                <div id="csStatus" class="hidden text-sm rounded-2xl p-4 mb-4"></div>
+
+                <button type="submit" id="csSubmit"
+                        class="w-full bg-[#9B7EBD] hover:bg-[#8B6DB0] py-3.5 rounded-2xl font-semibold mb-3 transition-all disabled:opacity-60 disabled:cursor-not-allowed">
+                    I've sent the payment, send my order
+                </button>
+                <p class="text-[10px] text-center text-gray-500">Delivered by email as MP3, usually within 3-5 days.</p>
+            </form>
+
+            <button type="button" onclick="hideCustomSongModal()"
+                    class="w-full py-3 text-sm text-gray-400 hover:text-white">Cancel</button>
+        </div>
+    </div>
+
+    <!-- FREE DOGINAL ANTHEM MODAL -->
+    <div id="anthemModal" data-modal class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
+        <div class="bg-[#0f172a] border border-[#9B7EBD]/40 p-8 rounded-3xl max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto shadow-[0_0_45px_rgba(155,126,189,0.25)]">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="text-2xl font-semibold"><i class="fas fa-paw text-[#9B7EBD] mr-2"></i>Doginal Dogs Anthem</h3>
+                <button type="button" onclick="hideAnthemModal()" aria-label="Close" class="text-gray-400 hover:text-white">✕</button>
+            </div>
+            <p class="text-xs uppercase tracking-widest text-[#9B7EBD] font-semibold mb-2">FREE &middot; Tribute to the pack</p>
+            <p class="text-gray-400 mb-6">A song for your Doginal Dog, my gift to the pack. No payment needed.</p>
+
+            <form id="anthemForm" novalidate onsubmit="submitAnthemRequest(event)">
+                <input id="daName" name="name" type="text" required autocomplete="name" class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]" placeholder="Your name">
+                <input id="daEmail" name="email" type="email" required autocomplete="email" class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]" placeholder="Your email for delivery">
+                <input id="daHandle" name="x_handle" type="text" required autocomplete="off" class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]" placeholder="Your X handle (@...)">
+                <input id="daDog" name="doginal_dog" type="text" required autocomplete="off" class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]" placeholder="Your Doginal Dog (# or name)">
+                <textarea id="daStory" name="personality" required rows="4" class="w-full bg-white/5 border border-white/20 rounded-2xl p-4 mb-3 focus:outline-none focus:border-[#9B7EBD]" placeholder="Its personality and story: what makes your dog special?"></textarea>
+                <label for="daMood" class="block text-xs text-gray-400 mb-1 pl-1">Mood</label>
+                <select id="daMood" name="mood" class="w-full bg-[#0b1224] border border-white/20 rounded-2xl p-4 mb-4 focus:outline-none focus:border-[#9B7EBD] text-white">
+                    <option>Epic / heroic</option>
+                    <option>Fun / playful</option>
+                    <option>Hip hop / flow</option>
+                    <option>Emotional / heartfelt</option>
+                    <option>Healing / chill</option>
+                    <option>Rock</option>
+                    <option>Surprise me</option>
+                </select>
+
+                <div id="daStatus" class="hidden text-sm rounded-2xl p-4 mb-4"></div>
+
+                <div class="flex gap-3">
+                    <button type="button" onclick="hideAnthemModal()"
+                            class="flex-1 py-3 rounded-2xl border border-white/30 hover:bg-white/5">Cancel</button>
+                    <button type="submit" id="daSubmit"
+                            class="flex-1 bg-[#9B7EBD] hover:bg-[#8B6DB0] py-3 rounded-2xl font-semibold transition-all disabled:opacity-60 disabled:cursor-not-allowed">Send my request</button>
+                </div>
+                <p class="text-[10px] text-center text-gray-500 mt-3">Love Always Wins. 🐾</p>
+            </form>
         </div>
     </div>
 
@@ -766,13 +956,13 @@
 
         function showBuyModal(mode, song) {
             buyMode = mode === 'bundle' ? 'bundle' : 'single';
-            const price = buyMode === 'bundle' ? '$7' : '$3';
+            const price = buyMode === 'bundle' ? '€7' : '€2';
             document.getElementById('buyForm').reset();
             resetFormState('buyForm', 'buyStatus', 'buySubmit', BUY_LABEL);
-            document.getElementById('buyTitle').textContent = buyMode === 'bundle' ? '5 songs bundle' : 'Buy this song';
+            document.getElementById('buyTitle').textContent = buyMode === 'bundle' ? '6 songs bundle' : 'Buy this song';
             document.getElementById('buyPriceLine').textContent = buyMode === 'bundle'
-                ? '5 songs of your choice for $7 in SOL, paid to my Phantom wallet.'
-                : '"' + song + '" for $3 in SOL, paid to my Phantom wallet.';
+                ? '6 songs of your choice for €7 in SOL, paid to my Phantom wallet.'
+                : '"' + song + '" for €2 in SOL, paid to my Phantom wallet.';
             document.querySelectorAll('#buyModal .buyAmount').forEach(el => { el.textContent = price; });
             document.getElementById('buySong').value = buyMode === 'single' ? (song || '') : '';
             document.getElementById('buySingleWrap').classList.toggle('hidden', buyMode === 'bundle');
@@ -784,9 +974,10 @@
             closeModal('buyModal');
         }
 
-        function copyBuyWallet() {
-            const wallet = document.getElementById('buyWallet').textContent.trim();
-            const btn = document.getElementById('buyCopyBtn');
+        function copyWallet(walletId, btnId) {
+            const walletEl = document.getElementById(walletId);
+            const wallet = walletEl.textContent.trim();
+            const btn = document.getElementById(btnId);
             const done = () => {
                 btn.innerHTML = '<i class="fas fa-check"></i>';
                 setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i>'; }, 1500);
@@ -795,12 +986,16 @@
                 navigator.clipboard.writeText(wallet).then(done).catch(() => {});
             } else {
                 const range = document.createRange();
-                range.selectNodeContents(document.getElementById('buyWallet'));
+                range.selectNodeContents(walletEl);
                 const sel = window.getSelection();
                 sel.removeAllRanges();
                 sel.addRange(range);
                 try { document.execCommand('copy'); done(); } catch (e) {}
             }
+        }
+
+        function copyBuyWallet() {
+            copyWallet('buyWallet', 'buyCopyBtn');
         }
 
         function submitBuyRequest(event) {
@@ -809,17 +1004,17 @@
             const songs = isBundle
                 ? document.getElementById('buySongs').value.trim()
                 : document.getElementById('buySong').value.trim();
-            const price = isBundle ? '$7' : '$3';
+            const price = isBundle ? '€7' : '€2';
             sendForm({
                 formId: 'buyForm',
                 buttonId: 'buySubmit',
                 statusId: 'buyStatus',
-                subject: isBundle ? 'New song purchase ($7 SOL bundle) - BBella 777' : 'New song purchase ($3 SOL) - BBella 777',
+                subject: isBundle ? 'New song purchase (€7 SOL bundle, 6 songs) - BBella 777' : 'New song purchase (€2 SOL) - BBella 777',
                 validate: () => requireNameEmail('buyName', 'buyEmail')
-                    || (songs ? null : (isBundle ? 'Please write the 5 songs you want.' : 'Please choose a song.'))
+                    || (songs ? null : (isBundle ? 'Please write the 6 songs you want.' : 'Please choose a song.'))
                     || (document.getElementById('buyTx').value.trim() ? null : 'Please paste your Solana transaction signature.'),
                 data: {
-                    order_type: isBundle ? 'Bundle (5 songs)' : 'Single song',
+                    order_type: isBundle ? 'Bundle (6 songs)' : 'Single song',
                     price: price + ' in SOL',
                     songs: songs,
                     name: document.getElementById('buyName').value.trim(),
@@ -827,6 +1022,83 @@
                     transaction_signature: document.getElementById('buyTx').value.trim()
                 },
                 successText: 'Thank you! Your order was sent. Once BBella confirms your ' + price + ' SOL payment, your MP3' + (isBundle ? 's' : '') + ' will arrive by email.'
+            });
+        }
+
+        // PERSONALIZED SONG (€9)
+        const CS_LABEL = "I've sent the payment, send my order";
+        function val(id) { return document.getElementById(id).value.trim(); }
+
+        function showCustomSongModal() {
+            resetFormState('customSongForm', 'csStatus', 'csSubmit', CS_LABEL);
+            openModal('customSongModal');
+        }
+
+        function hideCustomSongModal() {
+            closeModal('customSongModal');
+        }
+
+        function submitCustomSongRequest(event) {
+            if (event) event.preventDefault();
+            sendForm({
+                formId: 'customSongForm',
+                buttonId: 'csSubmit',
+                statusId: 'csStatus',
+                subject: 'New personalized song order (€9 SOL) - BBella 777',
+                validate: () => requireNameEmail('csName', 'csEmail')
+                    || (val('csFor') ? null : 'Please tell me who the song is for.')
+                    || (val('csOccasion') ? null : 'Please choose the occasion.')
+                    || (val('csStory') ? null : 'Please tell me the story, names or words to include.')
+                    || (val('csStyle') ? null : 'Please choose a style or mood.')
+                    || (val('csTx') ? null : 'Please paste your Solana transaction signature.'),
+                data: {
+                    order_type: 'Personalized song (up to 6 min)',
+                    price: '€9 in SOL',
+                    name: val('csName'),
+                    email: val('csEmail'),
+                    for_whom: val('csFor'),
+                    occasion: val('csOccasion'),
+                    story: val('csStory'),
+                    style: val('csStyle'),
+                    language: val('csLanguage'),
+                    deadline: val('csDeadline'),
+                    transaction_signature: val('csTx')
+                },
+                successText: 'Thank you! Your order was sent. Once BBella confirms your €9 SOL payment, she will start your song. It is delivered by email as MP3, usually within 3-5 days.'
+            });
+        }
+
+        // FREE DOGINAL ANTHEM
+        function showAnthemModal() {
+            resetFormState('anthemForm', 'daStatus', 'daSubmit', 'Send my request');
+            openModal('anthemModal');
+        }
+
+        function hideAnthemModal() {
+            closeModal('anthemModal');
+        }
+
+        function submitAnthemRequest(event) {
+            if (event) event.preventDefault();
+            sendForm({
+                formId: 'anthemForm',
+                buttonId: 'daSubmit',
+                statusId: 'daStatus',
+                subject: 'New FREE Doginal anthem request - BBella 777',
+                validate: () => requireNameEmail('daName', 'daEmail')
+                    || (val('daHandle') ? null : 'Please enter your X handle.')
+                    || (val('daDog') ? null : 'Please enter your Doginal Dog number or name.')
+                    || (val('daStory') ? null : "Please tell me a little about your dog's personality or story."),
+                data: {
+                    order_type: 'FREE Doginal Dogs Anthem',
+                    name: val('daName'),
+                    email: val('daEmail'),
+                    x_handle: val('daHandle'),
+                    doginal_dog: val('daDog'),
+                    personality_story: val('daStory'),
+                    mood: val('daMood')
+                },
+                successText: 'Thank you! Your request was sent. BBella will create your Doginal Anthem and email it to you. Love Always Wins. 🐾'
             });
         }
 
